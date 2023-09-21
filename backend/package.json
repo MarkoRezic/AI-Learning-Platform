@@ -1,0 +1,15 @@
+{
+  "name": "ai-learning-platform-server",
+  "version": "1.0.0",
+  "description": "backend server for ai learning platform file uploads, login, database management",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marko Rezić",
+  "license": "ISC"
+}
