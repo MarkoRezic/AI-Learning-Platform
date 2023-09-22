@@ -28,7 +28,7 @@ const sessionStoreOptions = {
 const sessionStore = new MySQLStore(sessionStoreOptions);
 
 const sessionOptions = {
-    key: 'roadbook_session_id',
+    key: 'session_id',
     secret: SESSION_SECRET,
     store: sessionStore,
     proxy: true,

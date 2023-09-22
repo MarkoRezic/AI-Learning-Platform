@@ -11,11 +11,11 @@ session1Middleware.use("/*", (req, res, next) => {
     //return error status 401 unauthorized if it doesnt
     //else append userInfo to req, and call next()
 
-    let roadbook_session_id = req.cookies.roadbook_session_id
+    let session_id = req.cookies.session_id
 
-    if (roadbook_session_id != null && cookie_signature.unsign(roadbook_session_id, SESSION_SECRET) !== false) {
+    if (session_id != null && cookie_signature.unsign(session_id, SESSION_SECRET) !== false) {
 
-        let unsigned_sessionID = cookie_signature.unsign(roadbook_session_id, SESSION_SECRET)
+        let unsigned_sessionID = cookie_signature.unsign(session_id, SESSION_SECRET)
 
         database.db.query(
             `SELECT * 
@@ -43,8 +43,8 @@ session1Middleware.use("/*", (req, res, next) => {
     }
     else {
         //for localhost
-        if (roadbook_session_id != null && ENVIRONMENT === 'local') {
-            let unsigned_sessionID = roadbook_session_id.split('.')[0]
+        if (session_id != null && ENVIRONMENT === 'local') {
+            let unsigned_sessionID = session_id.split('.')[0]
 
             database.db.query(
                 `SELECT * 

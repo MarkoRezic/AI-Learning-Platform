@@ -8,8 +8,6 @@ const express = require('express');
 const authRouter = express.Router();
 const database = require('../database.js');
 const cookie_signature = require('cookie-signature');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 const session0Middleware = require('../middleware/session0.js')
 const session1Middleware = require('../middleware/session1.js')
 
