@@ -28,18 +28,18 @@ const sessionStoreOptions = {
 const sessionStore = new MySQLStore(sessionStoreOptions);
 
 const sessionOptions = {
-    key: 'roadbook_session_id',
+    key: 'session_id',
     secret: SESSION_SECRET,
     store: sessionStore,
     proxy: true,
-    resave: true,
+    resave: false,
     saveUninitialized: false,
     rolling: true,
     cookie: {
-        maxAge: 60 * 60 * 1000, //minutes * seconds * miliseconds
-        secure: ENVIRONMENT === 'local' ? false : true,
-        httpOnly: ENVIRONMENT === 'local' ? false : true,
-        sameSite: 'none'
+        secure: false,
+        sameSite: 'lax',
+        httpOnly: false,
+        path: null,
     }
 }
 

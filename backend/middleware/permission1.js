@@ -12,7 +12,7 @@ permission1Middleware.use("/*", (req, res, next) => {
     //if requirements fulfilled call next()
     //else return error status 403 unauthorized
 
-    if (req.userInfo.role_name === 'admin') {
+    if (req.userInfo.role_id === roles.admin.role_id) {
         next();
     }
     else {

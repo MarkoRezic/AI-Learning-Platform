@@ -15,7 +15,7 @@ permission0Middleware.use("/*", (req, res, next) => {
 
     if (req.embededParams.project_id != null) {
         //USER
-        if (req.userInfo.role_name === 'user') {
+        if (req.userInfo.role_id === roles.user.role_id) {
         }
         //ADMIN
         else {

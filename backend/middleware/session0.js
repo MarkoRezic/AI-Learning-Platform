@@ -10,11 +10,15 @@ session0Middleware.use("/*", (req, res, next) => {
     //parse cookie and check if session exists with that id
     //return error status 403 unathorized if it does, else next()
 
-    let roadbook_session_id = req.cookies.roadbook_session_id
+    let session_id = req.cookies.session_id
+    //console.log("COOKIES", req.cookies)
+    //console.log("COOKIE SESSION ID", session_id)
+    //console.log("SESSION ID", req.sessionID)
+    //console.log("TEST", req.get('Cookie'))
 
-    if (roadbook_session_id != null) {
-        console.log(roadbook_session_id)
-        let unsigned_sessionID = ENVIRONMENT === 'local' ? roadbook_session_id.split('.')[0] : cookie_signature.unsign(roadbook_session_id, SESSION_SECRET)
+    if (session_id != null) {
+        let unsigned_sessionID = ENVIRONMENT === 'local' ? session_id.split('.')[0].split(':')[1] : cookie_signature.unsign(session_id, SESSION_SECRET)
+        //console.log("UNSIGNED", unsigned_sessionID)
 
         database.db.query(
             `SELECT * 

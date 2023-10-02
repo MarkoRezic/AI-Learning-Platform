@@ -3,12 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Error404 from './views/Error404';
+import EduidLogin from './views/EduidLogin';
+import { DataProvider } from './Context';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <DataProvider><App /></DataProvider>,
+    errorElement: <DataProvider><Error404 /></DataProvider>,
+    children: [
+      {
+        path: "login",
+        element: <EduidLogin />
+      }
+    ]
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function

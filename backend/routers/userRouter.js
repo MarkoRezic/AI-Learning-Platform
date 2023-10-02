@@ -21,7 +21,7 @@ userRouter.post(['/password-reset', '/password-reset/:jwt'], session0Middleware)
 userRouter.post(['/permission/:user_id/:roadbook_id'], permission1Middleware);
 userRouter.put(['/name', '/password'], session1Middleware);
 userRouter.delete(['/permission/:user_id/:roadbook_id'], permission1Middleware);
-userRouter.delete(['/:user_id'], permission2Middleware);
+userRouter.delete(['/:user_id'], permission1Middleware);
 
 userRouter.get('/', (req, res) => {
     //select all users
