@@ -1,6 +1,10 @@
-#eduid-login {
+#admin-login {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#admin-login p:empty {
+    display: none;
 }

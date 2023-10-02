@@ -10,6 +10,7 @@ import {
 import Error404 from './views/Error404';
 import EduidLogin from './views/EduidLogin';
 import { DataProvider } from './Context';
+import AdminLogin from './views/admin/AdminLogin';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <EduidLogin />
-      }
+      },
+      {
+        path: "admin-login",
+        element: <AdminLogin />
+      },
     ]
   },
 ]);

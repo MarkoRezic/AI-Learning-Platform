@@ -1,6 +1,7 @@
 import "../styles/EduidLogin.css";
 import { useEffect } from "react";
 import axios from "axios";
+import EDUID_LOGO from "../images/eduid_logo.svg"
 
 function EduidLogin() {
 
@@ -27,7 +28,7 @@ function EduidLogin() {
     return (
         <div id="eduid-login">
             <img
-                src="https://aai.sum.ba/sso/module.php/sumbagui/imgs/Logo.svg"
+                src={EDUID_LOGO}
                 width="150"
             ></img>
             <h1>Sign in with eduID</h1>

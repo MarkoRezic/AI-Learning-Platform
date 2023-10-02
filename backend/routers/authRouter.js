@@ -12,6 +12,8 @@ const express = require('express');
 const authRouter = express.Router();
 const database = require('../database.js');
 const cookie_signature = require('cookie-signature');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const session0Middleware = require('../middleware/session0.js')
 const session1Middleware = require('../middleware/session1.js');
 const roles = require('../constants/roles.js');
@@ -195,6 +197,7 @@ authRouter.post('/admin-login', (req, res) => {
     //if true set req.session.userInfo, cookie header, send userInfo
     //else send 401 unauthenticated
     const { email, password } = req.body;
+    console.log(email, password)
     database.db.query(
         `SELECT u.*, r.role_name
         FROM users u
@@ -223,7 +226,7 @@ authRouter.post('/admin-login', (req, res) => {
                 })
             }
             else {
-                res.status(401).json({ status: 'Unauthorized', message: 'Admin not found' });
+                res.status(404).json({ status: 'Unauthorized', message: 'Admin not found' });
             }
         });
 });
@@ -239,7 +242,7 @@ authRouter.get('/logout', (req, res) => {
 
         let unsigned_sessionID = cookie_signature.unsign(session_id, SESSION_SECRET)
 
-        const role_id = req.session.userInfo.role_id
+        const role_id = req.session?.userInfo?.role_id
         database.db.query(
             `DELETE 
             FROM sessions 
@@ -252,12 +255,7 @@ authRouter.get('/logout', (req, res) => {
                 else {
                     req.session.destroy();
                     res.header('Set-Cookie', 'session_id=none; expires=Thu, 01 Jan 1970 00:00:00 GMT; ');
-                    if (role_id === roles.user.role_id) {
-                        res.redirect(`${EDUID_SERVER_LOGOUT_URL}?redirect_to=${ORIGIN_FRONTEND}/login`)
-                    }
-                    else {
-                        res.status(200).json({ status: 'OK', message: 'Logout success' });
-                    }
+                    res.redirect(`${role_id === roles.user.role_id ? `${EDUID_SERVER_LOGOUT_URL}?redirect_to=` : ''}${ORIGIN_FRONTEND}/${role_id === roles.admin.role_id ? 'admin-' : ''}login`)
                 }
             })
     }

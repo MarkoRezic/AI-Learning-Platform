@@ -9,6 +9,8 @@ export const DataProvider = (props) => {
     const {
         user,
         setUser,
+        adminLogin,
+        adminRegister,
         logout,
     } = useProviderFunctions()
 
@@ -17,6 +19,8 @@ export const DataProvider = (props) => {
             {
                 user,
                 setUser,
+                adminLogin,
+                adminRegister,
                 logout,
             }
         }>
@@ -27,10 +31,6 @@ export const DataProvider = (props) => {
 
 const useProviderFunctions = () => {
     const [user, setUser] = useState(null);
-
-    const logout = () => {
-        window.location.href = `${window.env.ORIGIN_BACKEND}/auth/logout`;
-    }
 
     useEffect(() => {
         axios.get('auth').then((response => {
@@ -47,9 +47,45 @@ const useProviderFunctions = () => {
         }
     }, [])
 
+    const adminLogin = (email, password, { callback, errorCallback }) => {
+        axios.post('auth/admin-login', {
+            email,
+            password
+        }).then((response => {
+            console.log(response);
+            setUser(response?.data?.result);
+            callback?.(response)
+        })).catch((error) => {
+            console.log(error)
+            errorCallback?.(error)
+        })
+    }
+
+    const adminRegister = (firstname, lastname, email, password, admin_secret, { callback, errorCallback }) => {
+        axios.post('auth/admin-register', {
+            firstname,
+            lastname,
+            email,
+            password,
+            admin_secret
+        }).then((response => {
+            console.log(response);
+            callback?.(response)
+        })).catch((error) => {
+            console.log(error)
+            errorCallback?.(error)
+        })
+    }
+
+    const logout = () => {
+        window.location.href = `${window.env.ORIGIN_BACKEND}/auth/logout`;
+    }
+
     return {
         user,
         setUser,
+        adminLogin,
+        adminRegister,
         logout,
     }
 
