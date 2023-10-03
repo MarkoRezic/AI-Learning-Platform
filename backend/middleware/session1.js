@@ -14,12 +14,13 @@ session1Middleware.use("/*", (req, res, next) => {
     let session_id = req.cookies.session_id
 
     //console.log(req.cookies)
-    console.log(session_id)
+    console.log("SESSION ID", session_id)
     //console.log(req.sessionID)
 
     if (session_id != null && cookie_signature.unsign(session_id, SESSION_SECRET) !== false) {
 
         let unsigned_sessionID = cookie_signature.unsign(session_id, SESSION_SECRET)
+        //console.log("UNSIGNED SESSION ID", unsigned_sessionID)
 
         database.db.query(
             `SELECT * 
@@ -49,11 +50,12 @@ session1Middleware.use("/*", (req, res, next) => {
         //for localhost
         if (session_id != null && ENVIRONMENT === 'local') {
             let unsigned_sessionID = session_id.split('.')[0].split(':')[1]
+            //console.log("UNSIGNED SESSION ID", unsigned_sessionID)
 
             database.db.query(
                 `SELECT * 
                 FROM sessions 
-                WHERE session_id = ?`,
+                WHERE session_id = CONVERT(?, CHAR)`,
                 [unsigned_sessionID],
                 (error, result) => {
                     if (error) {

@@ -246,7 +246,7 @@ authRouter.get('/logout', (req, res) => {
         database.db.query(
             `DELETE 
             FROM sessions 
-            WHERE session_id = ?`,
+            WHERE session_id = CONVERT(?, CHAR)`,
             [unsigned_sessionID],
             (error, result) => {
                 if (error) {

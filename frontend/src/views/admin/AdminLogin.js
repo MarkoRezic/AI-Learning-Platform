@@ -1,6 +1,6 @@
 import "../../styles/AdminLogin.css";
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import { DataContext } from "../../Context";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";

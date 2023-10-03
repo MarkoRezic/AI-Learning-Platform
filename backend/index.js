@@ -7,7 +7,7 @@ const {
 
 const express = require('express');
 const authRouter = require('./routers/authRouter.js');
-const projectRouter = require('./routers/projectRouter.js');
+const teamRouter = require('./routers/teamRouter.js');
 const userRouter = require('./routers/userRouter.js');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -57,7 +57,7 @@ app.get('/oauth/callback', async (req, res) => {
 });
 
 app.use('/auth', authRouter);
-app.use('/projects', projectRouter);
+app.use('/teams', teamRouter);
 app.use('/users', userRouter);
 
 app.listen(port, () => {

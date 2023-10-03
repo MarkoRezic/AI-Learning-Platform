@@ -1,3 +1,10 @@
+:root {
+  --eduid-color: #448aff;
+  --eduid-rgb: 68, 138, 255;
+  --hover-filter: brightness(1.15);
+  --active-filter: brightness(0.85);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -11,6 +11,8 @@ import Error404 from './views/Error404';
 import EduidLogin from './views/EduidLogin';
 import { DataProvider } from './Context';
 import AdminLogin from './views/admin/AdminLogin';
+import UserList from './views/admin/UserList';
+import UserDetails from './views/admin/UserDetails';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "admin-login",
         element: <AdminLogin />
+      },
+      {
+        path: "all-users",
+        element: <UserList />
+      },
+      {
+        path: "user/:user_id",
+        element: <UserDetails />
       },
     ]
   },

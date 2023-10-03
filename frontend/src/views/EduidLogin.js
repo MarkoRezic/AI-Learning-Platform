@@ -1,6 +1,6 @@
 import "../styles/EduidLogin.css";
 import { useEffect } from "react";
-import axios from "axios";
+import axios from "../axios";
 import EDUID_LOGO from "../images/eduid_logo.svg"
 
 function EduidLogin() {
@@ -12,7 +12,7 @@ function EduidLogin() {
         console.log(eduid_token)
 
         if (eduid_token != null && eduid_token !== '') {
-            axios.post(`${window.env.ORIGIN_BACKEND}/auth/login`, {
+            axios.post(`auth/login`, {
                 eduid_token
             }).then((response) => {
                 console.log(response.data);

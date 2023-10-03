@@ -208,6 +208,17 @@ function App() {
       ],
     },
     {
+      name: "Korisnici",
+      route: null,
+      role_id: roles.admin.role_id,
+      children: [
+        {
+          name: "Svi korisnici",
+          route: "/all-users"
+        },
+      ],
+    },
+    {
       name: "Profil",
       route: null,
       role_id: roles.admin.role_id,

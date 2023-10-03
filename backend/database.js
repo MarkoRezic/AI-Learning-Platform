@@ -39,7 +39,7 @@ const sessionOptions = {
         secure: false,
         sameSite: 'lax',
         httpOnly: false,
-        path: null,
+        path: '/',
     }
 }
 
