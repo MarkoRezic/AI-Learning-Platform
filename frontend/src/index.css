@@ -3,6 +3,118 @@
   --eduid-rgb: 68, 138, 255;
   --hover-filter: brightness(1.15);
   --active-filter: brightness(0.85);
+
+  /** CSS DARK THEME PRIMARY COLORS */
+  --color-primary-100: #448aff;
+  --color-primary-200: #6496ff;
+  --color-primary-300: #7da2ff;
+  --color-primary-400: #92afff;
+  --color-primary-500: #a6bcff;
+  --color-primary-600: #b9c9ff;
+  /** CSS DARK THEME SURFACE COLORS */
+  --color-surface-100: #121212;
+  --color-surface-200: #282828;
+  --color-surface-300: #3f3f3f;
+  --color-surface-400: #575757;
+  --color-surface-500: #717171;
+  --color-surface-600: #8b8b8b;
+  /** CSS DARK THEME PRIMARY SURFACE COLORS */
+  --color-surface-primary-100: #1a1d26;
+  --color-surface-primary-200: #2f323a;
+  --color-surface-primary-300: #464850;
+  --color-surface-primary-400: #5d5f67;
+  --color-surface-primary-500: #76787e;
+  --color-surface-primary-600: #909197;
+
+  /** CSS DARK THEME SECONDARY COLORS */
+  --color-primary-100: #ffb944;
+  --color-primary-200: #ffc15b;
+  --color-primary-300: #ffc870;
+  --color-primary-400: #ffd085;
+  --color-primary-500: #ffd899;
+  --color-primary-600: #ffdfae;
+  /** CSS DARK THEME SECONDARY SURFACE COLORS */
+  --color-surface-secondary-100: #272018;
+  --color-surface-secondary-200: #3c352d;
+  --color-surface-secondary-300: #514b44;
+  --color-surface-secondary-400: #68625c;
+  --color-surface-secondary-500: #7f7a75;
+  --color-surface-secondary-600: #98938f;
+
+  /** SHADOWS */
+  --shadow-offset-small: 2px;
+  --shadow-offset-mid: 3px;
+  --shadow-offset-large: 4px;
+  --shadow-offset-xlarge: 8px;
+  --shadow-offset-light-small: calc(-1*var(--shadow-offset-small)) calc(-1*var(--shadow-offset-small));
+  --shadow-offset-dark-small: var(--shadow-offset-small) var(--shadow-offset-small);
+  --shadow-offset-light-mid: calc(-1*var(--shadow-offset-mid)) calc(-1*var(--shadow-offset-mid));
+  --shadow-offset-dark-mid: var(--shadow-offset-mid) var(--shadow-offset-mid);
+  --shadow-offset-light-large: calc(-1*var(--shadow-offset-large)) calc(-1*var(--shadow-offset-large));
+  --shadow-offset-dark-large: var(--shadow-offset-large) var(--shadow-offset-large);
+  --shadow-offset-light-xlarge: calc(-1*var(--shadow-offset-xlarge)) calc(-1*var(--shadow-offset-xlarge));
+  --shadow-offset-dark-xlarge: var(--shadow-offset-xlarge) var(--shadow-offset-xlarge);
+  --shadow-blur-small: 3px;
+  --shadow-blur-mid: 6px;
+  --shadow-blur-large: 10px;
+  --shadow-blur-xlarge: 20px;
+  --shadow-color-light: rgba(255, 255, 255, 0.4);
+  --shadow-color-dark: rgba(0, 0, 0, 1);
+  --shadow-small: var(--shadow-offset-light-small) var(--shadow-blur-small) var(--shadow-color-light), var(--shadow-offset-dark-small) var(--shadow-blur-small) var(--shadow-color-dark);
+  --shadow-inset-small: var(--shadow-offset-dark-small) var(--shadow-blur-small) var(--shadow-color-dark) inset, var(--shadow-offset-light-small) var(--shadow-blur-small) var(--shadow-color-light) inset;
+  --shadow-mid: var(--shadow-offset-light-mid) var(--shadow-blur-mid) var(--shadow-color-light), var(--shadow-offset-dark-mid) var(--shadow-blur-mid) var(--shadow-color-dark);
+  --shadow-inset-mid: var(--shadow-offset-dark-mid) var(--shadow-blur-mid) var(--shadow-color-dark) inset, var(--shadow-offset-light-mid) var(--shadow-blur-mid) var(--shadow-color-light) inset;
+  --shadow-large: var(--shadow-offset-light-large) var(--shadow-blur-large) var(--shadow-color-light), var(--shadow-offset-dark-large) var(--shadow-blur-large) var(--shadow-color-dark);
+  --shadow-inset-large: var(--shadow-offset-dark-large) var(--shadow-blur-large) var(--shadow-color-dark) inset, var(--shadow-offset-light-large) var(--shadow-blur-large) var(--shadow-color-light) inset;
+  --shadow-xlarge: var(--shadow-offset-light-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-light), var(--shadow-offset-dark-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-dark);
+  --shadow-inset-xlarge: var(--shadow-offset-dark-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-dark) inset, var(--shadow-offset-light-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-light) inset;
+
+  /** BORDERS */
+  --border-small: 4px;
+  --border-mid: 8px;
+  --border-large: 12px;
+  --border-xlarge: 20px;
+
+  /** SHAPES */
+  --rounded-small: 4px;
+  --rounded-mid: 8px;
+  --rounded-large: 12px;
+  --rounded-xlarge: 20px;
+  --circular: 9999px;
+
+  /** BULDGES / DIPS */
+  --gradient-start: 8%;
+  --gradient-end: calc(100% - var(--gradient-start));
+
+  --buldge-color-light: 255, 255, 255;
+  --buldge-color-dark: 0, 0, 0;
+  --buldge-color-small-light: rgba(var(--buldge-color-light), 0.05);
+  --buldge-color-mid-light: rgba(var(--buldge-color-light), 0.10);
+  --buldge-color-large-light: rgba(var(--buldge-color-light), 0.15);
+  --buldge-color-xlarge-light: rgba(var(--buldge-color-light), 0.20);
+  --buldge-color-small-dark: rgba(var(--buldge-color-dark), 0.05);
+  --buldge-color-mid-dark: rgba(var(--buldge-color-dark), 0.10);
+  --buldge-color-large-dark: rgba(var(--buldge-color-dark), 0.15);
+  --buldge-color-xlarge-dark: rgba(var(--buldge-color-dark), 0.20);
+  --buldge-small: linear-gradient(to bottom right, var(--buldge-color-small-light) var(--gradient-start), var(--buldge-color-small-dark) var(--gradient-end));
+  --buldge-mid: linear-gradient(to bottom right, var(--buldge-color-mid-light) var(--gradient-start), var(--buldge-color-mid-dark) var(--gradient-end));
+  --buldge-large: linear-gradient(to bottom right, var(--buldge-color-large-light) var(--gradient-start), var(--buldge-color-large-dark) var(--gradient-end));
+  --buldge-xlarge: linear-gradient(to bottom right, var(--buldge-color-xlarge-light) var(--gradient-start), var(--buldge-color-xlarge-dark) var(--gradient-end));
+
+  --dip-color-light: 255, 255, 255;
+  --dip-color-dark: 0, 0, 0;
+  --dip-color-small-light: rgba(var(--dip-color-light), 0.05);
+  --dip-color-mid-light: rgba(var(--dip-color-light), 0.10);
+  --dip-color-large-light: rgba(var(--dip-color-light), 0.15);
+  --dip-color-xlarge-light: rgba(var(--dip-color-light), 0.20);
+  --dip-color-small-dark: rgba(var(--dip-color-dark), 0.05);
+  --dip-color-mid-dark: rgba(var(--dip-color-dark), 0.10);
+  --dip-color-large-dark: rgba(var(--dip-color-dark), 0.15);
+  --dip-color-xlarge-dark: rgba(var(--dip-color-dark), 0.20);
+  --dip-small: linear-gradient(to top left, var(--dip-color-small-light) var(--gradient-start), var(--dip-color-small-dark) var(--gradient-end));
+  --dip-mid: linear-gradient(to top left, var(--dip-color-mid-light) var(--gradient-start), var(--dip-color-mid-dark) var(--gradient-end));
+  --dip-large: linear-gradient(to top left, var(--dip-color-large-light) var(--gradient-start), var(--dip-color-large-dark) var(--gradient-end));
+  --dip-xlarge: linear-gradient(to top left, var(--dip-color-xlarge-light) var(--gradient-start), var(--dip-color-xlarge-dark) var(--gradient-end));
 }
 
 body {
@@ -12,6 +124,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-surface-primary-100);
 }
 
 code {

@@ -1,0 +1,211 @@
+#neumorphic-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#neumorphic-elements .preview div {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+}
+
+#neumorphic-elements label,
+#neumorphic-elements p {
+    color: white;
+}
+
+#neumorphic-elements p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 20px;
+    width: 120px;
+}
+
+#neumorphic-elements .properties {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 450px;
+}
+
+#neumorphic-elements .property-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shadow-small {
+    box-shadow: var(--shadow-small);
+}
+
+.shadow-mid {
+    box-shadow: var(--shadow-mid);
+}
+
+.shadow-large {
+    box-shadow: var(--shadow-large);
+}
+
+.shadow-xlarge {
+    box-shadow: var(--shadow-xlarge);
+}
+
+.shadow-inset-small {
+    box-shadow: var(--shadow-inset-small);
+}
+
+.shadow-inset-mid {
+    box-shadow: var(--shadow-inset-mid);
+}
+
+.shadow-inset-large {
+    box-shadow: var(--shadow-inset-large);
+}
+
+.shadow-inset-xlarge {
+    box-shadow: var(--shadow-inset-xlarge);
+}
+
+.shadow-small.shadow-inset-small {
+    box-shadow: var(--shadow-small), var(--shadow-inset-small);
+}
+
+.shadow-small.shadow-inset-mid {
+    box-shadow: var(--shadow-small), var(--shadow-inset-mid);
+}
+
+.shadow-small.shadow-inset-large {
+    box-shadow: var(--shadow-small), var(--shadow-inset-large);
+}
+
+.shadow-small.shadow-inset-xlarge {
+    box-shadow: var(--shadow-small), var(--shadow-inset-xlarge);
+}
+
+.shadow-mid.shadow-inset-small {
+    box-shadow: var(--shadow-mid), var(--shadow-inset-small);
+}
+
+.shadow-mid.shadow-inset-mid {
+    box-shadow: var(--shadow-mid), var(--shadow-inset-mid);
+}
+
+.shadow-mid.shadow-inset-large {
+    box-shadow: var(--shadow-mid), var(--shadow-inset-large);
+}
+
+.shadow-mid.shadow-inset-xlarge {
+    box-shadow: var(--shadow-mid), var(--shadow-inset-xlarge);
+}
+
+.shadow-large.shadow-inset-small {
+    box-shadow: var(--shadow-large), var(--shadow-inset-small);
+}
+
+.shadow-large.shadow-inset-mid {
+    box-shadow: var(--shadow-large), var(--shadow-inset-mid);
+}
+
+.shadow-large.shadow-inset-large {
+    box-shadow: var(--shadow-large), var(--shadow-inset-large);
+}
+
+.shadow-large.shadow-inset-xlarge {
+    box-shadow: var(--shadow-large), var(--shadow-inset-xlarge);
+}
+
+.shadow-xlarge.shadow-inset-small {
+    box-shadow: var(--shadow-xlarge), var(--shadow-inset-small);
+}
+
+.shadow-xlarge.shadow-inset-mid {
+    box-shadow: var(--shadow-xlarge), var(--shadow-inset-mid);
+}
+
+.shadow-xlarge.shadow-inset-large {
+    box-shadow: var(--shadow-xlarge), var(--shadow-inset-large);
+}
+
+.shadow-xlarge.shadow-inset-xlarge {
+    box-shadow: var(--shadow-xlarge), var(--shadow-inset-xlarge);
+}
+
+.buldge-small {
+    background: var(--buldge-small);
+}
+
+.buldge-mid {
+    background: var(--buldge-mid);
+}
+
+.buldge-large {
+    background: var(--buldge-large);
+}
+
+.buldge-xlarge {
+    background: var(--buldge-xlarge);
+}
+
+.dip-small {
+    background: var(--dip-small);
+}
+
+.dip-mid {
+    background: var(--dip-mid);
+}
+
+.dip-large {
+    background: var(--dip-large);
+}
+
+.dip-xlarge {
+    background: var(--dip-xlarge);
+}
+
+.border-small,
+.border-mid,
+.border-large,
+.border-xlarge {
+    border-style: solid;
+    border-color: var(--color-surface-primary-100);
+}
+
+.border-small {
+    border-width: var(--border-small);
+}
+
+.border-mid {
+    border-width: var(--border-mid);
+}
+
+.border-large {
+    border-width: var(--border-large);
+}
+
+.border-xlarge {
+    border-width: var(--border-xlarge);
+}
+
+.rounded-small {
+    border-radius: var(--rounded-small);
+}
+
+.rounded-mid {
+    border-radius: var(--rounded-mid);
+}
+
+.rounded-large {
+    border-radius: var(--rounded-large);
+}
+
+.rounded-xlarge {
+    border-radius: var(--rounded-xlarge);
+}
+
+.rounded-circular {
+    border-radius: var(--circular);
+}

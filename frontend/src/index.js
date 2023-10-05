@@ -13,6 +13,7 @@ import { DataProvider } from './Context';
 import AdminLogin from './views/admin/AdminLogin';
 import UserList from './views/admin/UserList';
 import UserDetails from './views/admin/UserDetails';
+import NeumorphicElements from './views/NeumorphicElements';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     element: <DataProvider><App /></DataProvider>,
     errorElement: <DataProvider><Error404 /></DataProvider>,
     children: [
+      {
+        path: "style",
+        element: <NeumorphicElements />
+      },
       {
         path: "login",
         element: <EduidLogin />
