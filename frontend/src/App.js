@@ -1,13 +1,11 @@
 import { useContext } from 'react';
-import './App.css';
+import './App.scss';
 import { Link, Outlet } from "react-router-dom";
 import { DataContext } from './Context';
 import roles from './constants/roles';
 
 function App() {
   const context = useContext(DataContext)
-
-  console.log(context.user)
 
   const navigationRoutes = [
     // Public routes
@@ -49,11 +47,11 @@ function App() {
       children: [
         {
           name: "Moji projekti",
-          route: "/projects"
+          route: "/teams"
         },
         {
           name: "Svi projekti",
-          route: "/all-projects"
+          route: "/all-teams"
         },
       ],
     },
@@ -138,15 +136,15 @@ function App() {
       children: [
         {
           name: "Svi projekti",
-          route: "/all-projects"
+          route: "/all-teams"
         },
         {
           name: "Recenzije projekata",
           route: "/reviews"
         },
         {
-          name: "Dodaj projekat",
-          route: "/new-project"
+          name: "Dodaj projekt",
+          route: "/new-team"
         },
       ],
     },
@@ -238,13 +236,18 @@ function App() {
 
   return (
     <div id="app">
-      <header id="app-header">
+      <header id="app-header" className='surface-primary-200 shadow-mid shadow-smooth-small rounded-circular  transition-smooth'>
         {
           navigationRoutes.filter(route => route.role_id == context?.user?.role_id).map((route, route_index) =>
-            <div className="dropdown" key={route_index}>
-              <button className="dropbtn">{route.name}</button>
-              <div className="dropdown-content">
-                {route.children.map((child_route, child_route_index) => <Link to={child_route.route} onClick={child_route.on_click} key={child_route_index}>{child_route.name}</Link>)}
+            <div className="dropdown " key={route_index}>
+              <button className="dropbtn rounded-small hover-invert transition-smooth">{route.name}</button>
+              <div className="dropdown-content surface-primary-200 shadow-inset-mid rounded-large transition-smooth">
+                {route.children.map((child_route, child_route_index) =>
+                  <Link className=' hover-invert transition-smooth'
+                    to={child_route.route} onClick={child_route.on_click} key={child_route_index}>
+                    {child_route.name}
+                  </Link>
+                )}
               </div>
             </div>)
         }

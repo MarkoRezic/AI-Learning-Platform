@@ -1,0 +1,45 @@
+#user-list {
+
+    .user-table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .user-table tr:not(:first-child):hover {
+        cursor: pointer;
+        filter: var(--hover-filter);
+    }
+
+    .user-table tr:nth-child(odd) {
+        background-color: var(--color-surface-primary-100);
+    }
+
+    .user-table tr:nth-child(even) {
+        background-color: var(--color-surface-primary-200);
+    }
+
+    .user-table td:not(:first-child),
+    .user-table th:not(:first-child) {
+        text-align: left;
+        padding: 8px;
+    }
+
+    .user-table th:first-child,
+    .user-table td:first-child {
+        text-align: left;
+        width: 1%;
+    }
+
+    .user-table td:first-child {
+        text-align: center;
+    }
+
+    .user-avatar img {
+        padding: 8px;
+        overflow: hidden;
+        max-height: 50px;
+        max-width: 50px;
+    }
+}

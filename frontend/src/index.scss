@@ -27,12 +27,12 @@
   --color-surface-primary-600: #909197;
 
   /** CSS DARK THEME SECONDARY COLORS */
-  --color-primary-100: #ffb944;
-  --color-primary-200: #ffc15b;
-  --color-primary-300: #ffc870;
-  --color-primary-400: #ffd085;
-  --color-primary-500: #ffd899;
-  --color-primary-600: #ffdfae;
+  --color-secondary-100: #ffb944;
+  --color-secondary-200: #ffc15b;
+  --color-secondary-300: #ffc870;
+  --color-secondary-400: #ffd085;
+  --color-secondary-500: #ffd899;
+  --color-secondary-600: #ffdfae;
   /** CSS DARK THEME SECONDARY SURFACE COLORS */
   --color-surface-secondary-100: #272018;
   --color-surface-secondary-200: #3c352d;
@@ -41,7 +41,34 @@
   --color-surface-secondary-500: #7f7a75;
   --color-surface-secondary-600: #98938f;
 
+  /** TEXT COLORS */
+  --text-color-light-rgb: 255, 255, 255;
+  --text-color-grey-rgb: 255, 255, 255;
+  --text-color-dark-rgb: 0, 0, 0;
+  --text-color-light-opacity: 0.8;
+  --text-color-grey-opacity: 0.5;
+  --text-color-dark-opacity: 0.6;
+  --text-color-light: rgba(var(--text-color-light-rgb), var(--text-color-light-opacity));
+  --text-color-grey: rgba(var(--text-color-grey-rgb), var(--text-color-grey-opacity));
+  --text-color-dark: rgba(var(--text-color-dark-rgb), var(--text-color-dark-opacity));
+  --text-color-default: var(--text-color-light);
+
+  /** TEXT SHADOWS */
+  --text-shadow-offset-small: 1px;
+  --text-shadow-offset-light-small: calc(-1*var(--text-shadow-offset-small)) calc(-1*var(--text-shadow-offset-small));
+  --text-shadow-offset-dark-small: var(--text-shadow-offset-small) var(--text-shadow-offset-small);
+  --text-shadow-blur-small: 2px;
+  --text-shadow-color-light: rgba(255, 255, 255, 0.4);
+  --text-shadow-color-dark: rgba(0, 0, 0, 1);
+  --text-shadow-small: var(--text-shadow-offset-light-small) var(--text-shadow-blur-small) var(--text-shadow-color-light), var(--text-shadow-offset-dark-small) var(--text-shadow-blur-small) var(--text-shadow-color-dark);
+  --text-shadow-inset-small: var(--text-shadow-offset-light-small) var(--text-shadow-blur-small) var(--text-shadow-color-dark), var(--text-shadow-offset-dark-small) var(--text-shadow-blur-small) var(--text-shadow-color-light);
+
   /** SHADOWS */
+  --shadow-color-light-none: rgba(255, 255, 255, 0);
+  --shadow-color-dark-none: rgba(0, 0, 0, 0);
+  --shadow-none: 0px 0px 0px var(--shadow-color-light-none), 0px 0px 0px var(--shadow-color-dark-none);
+  --shadow-inset-none: 0px 0px 0px var(--shadow-color-dark-none) inset, 0px 0px 0px var(--shadow-color-light-none) inset;
+  --shadow-smooth-none: 0px 0px 0px var(--shadow-color-light-none) inset, 0px 0px 0px var(--shadow-color-dark-none) inset;
   --shadow-offset-small: 2px;
   --shadow-offset-mid: 3px;
   --shadow-offset-large: 4px;
@@ -62,12 +89,16 @@
   --shadow-color-dark: rgba(0, 0, 0, 1);
   --shadow-small: var(--shadow-offset-light-small) var(--shadow-blur-small) var(--shadow-color-light), var(--shadow-offset-dark-small) var(--shadow-blur-small) var(--shadow-color-dark);
   --shadow-inset-small: var(--shadow-offset-dark-small) var(--shadow-blur-small) var(--shadow-color-dark) inset, var(--shadow-offset-light-small) var(--shadow-blur-small) var(--shadow-color-light) inset;
+  --shadow-smooth-small: var(--shadow-offset-light-small) var(--shadow-blur-small) var(--shadow-color-dark) inset, var(--shadow-offset-dark-small) var(--shadow-blur-small) var(--shadow-color-light) inset;
   --shadow-mid: var(--shadow-offset-light-mid) var(--shadow-blur-mid) var(--shadow-color-light), var(--shadow-offset-dark-mid) var(--shadow-blur-mid) var(--shadow-color-dark);
   --shadow-inset-mid: var(--shadow-offset-dark-mid) var(--shadow-blur-mid) var(--shadow-color-dark) inset, var(--shadow-offset-light-mid) var(--shadow-blur-mid) var(--shadow-color-light) inset;
+  --shadow-smooth-mid: var(--shadow-offset-light-mid) var(--shadow-blur-mid) var(--shadow-color-dark) inset, var(--shadow-offset-dark-mid) var(--shadow-blur-mid) var(--shadow-color-light) inset;
   --shadow-large: var(--shadow-offset-light-large) var(--shadow-blur-large) var(--shadow-color-light), var(--shadow-offset-dark-large) var(--shadow-blur-large) var(--shadow-color-dark);
   --shadow-inset-large: var(--shadow-offset-dark-large) var(--shadow-blur-large) var(--shadow-color-dark) inset, var(--shadow-offset-light-large) var(--shadow-blur-large) var(--shadow-color-light) inset;
+  --shadow-smooth-large: var(--shadow-offset-light-large) var(--shadow-blur-large) var(--shadow-color-dark) inset, var(--shadow-offset-dark-large) var(--shadow-blur-large) var(--shadow-color-light) inset;
   --shadow-xlarge: var(--shadow-offset-light-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-light), var(--shadow-offset-dark-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-dark);
   --shadow-inset-xlarge: var(--shadow-offset-dark-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-dark) inset, var(--shadow-offset-light-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-light) inset;
+  --shadow-smooth-xlarge: var(--shadow-offset-light-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-dark) inset, var(--shadow-offset-dark-xlarge) var(--shadow-blur-xlarge) var(--shadow-color-light) inset;
 
   /** BORDERS */
   --border-small: 4px;
@@ -75,12 +106,12 @@
   --border-large: 12px;
   --border-xlarge: 20px;
 
-  /** SHAPES */
+  /** ROUNDED */
   --rounded-small: 4px;
   --rounded-mid: 8px;
   --rounded-large: 12px;
   --rounded-xlarge: 20px;
-  --circular: 9999px;
+  --circular: 200px;
 
   /** BULDGES / DIPS */
   --gradient-start: 8%;
@@ -111,10 +142,10 @@
   --dip-color-mid-dark: rgba(var(--dip-color-dark), 0.10);
   --dip-color-large-dark: rgba(var(--dip-color-dark), 0.15);
   --dip-color-xlarge-dark: rgba(var(--dip-color-dark), 0.20);
-  --dip-small: linear-gradient(to top left, var(--dip-color-small-light) var(--gradient-start), var(--dip-color-small-dark) var(--gradient-end));
-  --dip-mid: linear-gradient(to top left, var(--dip-color-mid-light) var(--gradient-start), var(--dip-color-mid-dark) var(--gradient-end));
-  --dip-large: linear-gradient(to top left, var(--dip-color-large-light) var(--gradient-start), var(--dip-color-large-dark) var(--gradient-end));
-  --dip-xlarge: linear-gradient(to top left, var(--dip-color-xlarge-light) var(--gradient-start), var(--dip-color-xlarge-dark) var(--gradient-end));
+  --dip-small: linear-gradient(to bottom right, var(--dip-color-small-dark) var(--gradient-start), var(--dip-color-small-light) var(--gradient-end));
+  --dip-mid: linear-gradient(to bottom right, var(--dip-color-mid-dark) var(--gradient-start), var(--dip-color-mid-light) var(--gradient-end));
+  --dip-large: linear-gradient(to bottom right, var(--dip-color-large-dark) var(--gradient-start), var(--dip-color-large-light) var(--gradient-end));
+  --dip-xlarge: linear-gradient(to bottom right, var(--dip-color-xlarge-dark) var(--gradient-start), var(--dip-color-xlarge-light) var(--gradient-end));
 }
 
 body {
@@ -122,6 +153,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  color: var(--text-color-default);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-surface-primary-100);
@@ -130,4 +162,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  border: none;
+}
+
+* {
+  color: var(--text-color-default);
+  background-color: transparent;
+  border-color: var(--color-surface-primary-100);
+}
+
+input {
+  outline: none;
+}
+
+input:focus {
+  filter: var(--hover-filter);
 }

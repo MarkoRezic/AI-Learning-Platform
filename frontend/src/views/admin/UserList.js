@@ -1,4 +1,4 @@
-import "../../styles/UserList.css";
+import { user_list } from "../../styles/styles";
 import { useEffect, useState } from "react";
 import axios from "../../axios";
 import Loader from "../../components/Loader";
@@ -30,7 +30,7 @@ function UserList() {
             {
                 loading ?
                     <Loader />
-                    : <table className="user-table">
+                    : <table className="user-table shadow-small border-large  ">
                         <tbody>
                             <tr>
                                 <th>Slika</th>
@@ -44,13 +44,13 @@ function UserList() {
                             {
                                 userList.map((user, user_index) =>
                                     <tr className="user-row" key={user_index} onClick={() => { openUserDetails(user) }}>
-                                        <td className="user-avatar"><img src={user?.avatar_url}></img></td>
-                                        <td className="user-firstname">{user?.firstname}</td>
-                                        <td className="user-lastname">{user?.lastname}</td>
-                                        <td className="user-iss-username">{user?.iss_username}</td>
-                                        <td className="user-edu-uid">{user?.edu_uid}</td>
-                                        <td className="user-email">{user?.email}</td>
-                                        <td className="user-github">{user?.github_profile_link}</td>
+                                        <td className="user-avatar shadow-inset-small border-small  "><div className="shadow-inset-mid rounded-mid  "><img src={user?.avatar_url}></img></div></td>
+                                        <td className="user-firstname shadow-inset-small border-small  ">{user?.firstname}</td>
+                                        <td className="user-lastname shadow-inset-small border-small  ">{user?.lastname}</td>
+                                        <td className="user-iss-username shadow-inset-small border-small  ">{user?.iss_username}</td>
+                                        <td className="user-edu-uid shadow-inset-small border-small  ">{user?.edu_uid}</td>
+                                        <td className="user-email shadow-inset-small border-small  ">{user?.email}</td>
+                                        <td className="user-github shadow-inset-small border-small  ">{user?.github_profile_link}</td>
                                     </tr>
                                 )
                             }

@@ -1,0 +1,64 @@
+#user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+
+    .user-card {
+        position: relative;
+        height: 180px;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .user-card img {
+        display: flex;
+        height: 100%;
+        margin-right: 10px;
+        overflow: hidden;
+        padding: 8px;
+    }
+
+    .divider {
+        background-color: rgba(0, 0, 0, 1);
+        display: flex;
+    }
+
+    .divider.horizontal {
+        flex-direction: row;
+        height: 1px;
+        width: 100%;
+    }
+
+    .divider.vertical {
+        flex-direction: column;
+        width: 1px;
+        height: 100%;
+    }
+
+    .user-card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .user-card-info>div {
+        padding: 4px 8px;
+        margin: 4px;
+        height: 24px;
+    }
+
+    .user-teams {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 40px;
+    }
+}

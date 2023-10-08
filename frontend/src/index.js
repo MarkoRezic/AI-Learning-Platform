@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -14,6 +14,10 @@ import AdminLogin from './views/admin/AdminLogin';
 import UserList from './views/admin/UserList';
 import UserDetails from './views/admin/UserDetails';
 import NeumorphicElements from './views/NeumorphicElements';
+import TeamDetails from './views/admin/TeamDetails';
+import TeamList from './views/admin/TeamList';
+import TeamUpdate from './views/admin/TeamUpdate';
+import TeamNew from './views/admin/TeamNew';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +44,22 @@ const router = createBrowserRouter([
       {
         path: "user/:user_id",
         element: <UserDetails />
+      },
+      {
+        path: "all-teams",
+        element: <TeamList />
+      },
+      {
+        path: "team/:team_id",
+        element: <TeamDetails />
+      },
+      {
+        path: "update-team/:team_id",
+        element: <TeamUpdate />
+      },
+      {
+        path: "new-team",
+        element: <TeamNew />
       },
     ]
   },

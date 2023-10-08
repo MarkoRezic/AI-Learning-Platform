@@ -1,0 +1,73 @@
+#app {
+  background-color: var(--color-surface-primary-100);
+
+  #app-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 12px;
+    padding: var(--shadow-offset-mid);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .dropdown:last-child {
+    margin-left: auto;
+  }
+
+  /* Dropdown Button */
+  .dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .dropdown:last-child .dropbtn {
+    margin-left: auto;
+    border-top-right-radius: 200px !important;
+    border-bottom-right-radius: 200px !important;
+  }
+
+  .dropdown:first-child .dropbtn {
+    border-top-left-radius: 200px !important;
+    border-bottom-left-radius: 200px !important;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  /* Last dropdown should open to the left */
+  .dropdown:last-child .dropdown-content {
+    right: 0;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {}
+}

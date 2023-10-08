@@ -1,4 +1,5 @@
-import "../../styles/UserDetails.css";
+//import "../../styles/UserDetails.scss";
+import { user_details } from "../../styles/styles";
 import { useEffect, useState } from "react";
 import axios from "../../axios";
 import Loader from "../../components/Loader";
@@ -32,21 +33,24 @@ function UserDetails() {
         });
     }, []);
 
+    const openTeamDetails = (team) => {
+        navigate(`/team/${team?.team_id}`);
+    }
+
     return (
         <div id="user-details">
-            <div className="user-card">
+            <div className="user-card shadow-large dip-mid rounded-large  ">
                 {
                     loadingUser ?
                         <Loader />
                         : <>
-                            <img src={user?.avatar_url}></img>
-                            <div className="divider vertical"></div>
+                            <img className="shadow-inset-mid rounded-large  " src={user?.avatar_url}></img>
                             <div className="user-card-info">
-                                <div className="user-full-name">{user?.firstname} {user?.lastname}</div>
-                                <div className="user-iss-username">{user?.iss_username}</div>
-                                <div className="user-edu-uid">{user?.edu_uid}</div>
-                                <div className="user-email">{user?.email}</div>
-                                <div className="user-github">{user?.github_profile_link}</div>
+                                <div className="user-full-name shadow-inset-small rounded-mid  ">{user?.firstname} {user?.lastname}</div>
+                                <div className="user-iss-username shadow-inset-small rounded-mid  ">{user?.iss_username}</div>
+                                <div className="user-edu-uid shadow-inset-small rounded-mid  ">{user?.edu_uid}</div>
+                                <div className="user-email shadow-inset-small rounded-mid  ">{user?.email}</div>
+                                <div className="user-github shadow-inset-small rounded-mid  ">{user?.github_profile_link}</div>
                             </div>
                         </>
                 }
@@ -56,12 +60,14 @@ function UserDetails() {
                     loadingTeams ?
                         <Loader />
                         : teams.map((team, team_index) =>
-                            <div className="team-row" key={team_index}>
+                            <div className="team-row list-item"
+                                key={team_index}
+                                onClick={() => { openTeamDetails(team) }}>
                                 <div className="team-team-name">{team?.team_name}</div>
                                 <div className="team-project-name">{team?.project_name}</div>
                                 <div className="team-project-github-link">{team?.project_github_link}</div>
                                 <div className="team-academic-year">{team?.academic_year}</div>
-                                <div className="team-approved">{team?.approved}</div>
+                                <div className="team-approved">{team?.approved === 1 ? "ODOBRENO" : "NA ČEKANJU"}</div>
                             </div>
                         )
                 }

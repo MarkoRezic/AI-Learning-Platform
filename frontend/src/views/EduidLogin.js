@@ -1,4 +1,4 @@
-import "../styles/EduidLogin.css";
+import { eduid_login } from "../styles/styles";
 import { useEffect } from "react";
 import axios from "../axios";
 import EDUID_LOGO from "../images/eduid_logo.svg"
@@ -26,17 +26,17 @@ function EduidLogin() {
     }, []);
 
     return (
-        <div id="eduid-login">
-            <img
+        <div id="eduid-login" className="shadow-mid shadow-smooth-small rounded-xlarge ">
+            <img className="shadow-xlarge shadow-inset-mid border-mid rounded-xlarge "
                 src={EDUID_LOGO}
                 width="150"
             ></img>
-            <h1>Sign in with eduID</h1>
+            <h1 className="text-shadow-small">Prijava putem eduID</h1>
             <button
-                className="btn primary"
+                className="shadow-small shadow-smooth-mid dip-small rounded-mid text-shadow-small active-invert transition-smooth text-color-light"
                 onClick={() => { window.location.href = `${window.env.ORIGIN_BACKEND}/auth/eduid/authorize` }}
             >
-                Sign in
+                Prijavi se
             </button>
         </div>
     );

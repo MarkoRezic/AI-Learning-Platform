@@ -1,4 +1,4 @@
-import "../../styles/AdminLogin.css";
+import { admin_login } from "../../styles/styles";
 import { useContext, useEffect, useState } from "react";
 import axios from "../../axios";
 import { DataContext } from "../../Context";
@@ -116,12 +116,12 @@ function AdminLogin() {
     }
 
     return (
-        <div id="admin-login">
-            <img
+        <div id="admin-login" className="shadow-mid shadow-smooth-small rounded-xlarge ">
+            <img className="shadow-xlarge shadow-inset-mid border-mid rounded-xlarge "
                 src={ADMIN_LOGIN}
-                width="150"
+                width="80"
             ></img>
-            <h1>Admin {!register ? 'Prijava' : 'Registracija'}</h1>
+            <h1 className="text-shadow-small">Admin {!register ? 'Prijava' : 'Registracija'}</h1>
             {
                 register ?
                     <>
@@ -140,7 +140,7 @@ function AdminLogin() {
                     : null
             }
             <button
-                className="btn primary"
+                className="shadow-small shadow-smooth-mid dip-small rounded-mid text-shadow-small active-invert transition-smooth text-color-light"
                 onClick={!register ? adminLogin : adminRegister}
                 disabled={loading}
             >
@@ -148,7 +148,7 @@ function AdminLogin() {
             </button>
             <p>{errors.general}</p>
             <button
-                className="btn primary"
+                className="shadow-small shadow-smooth-mid dip-small rounded-mid text-shadow-small active-invert transition-smooth text-color-light"
                 onClick={toggleRegister}
                 disabled={loading}
             >
