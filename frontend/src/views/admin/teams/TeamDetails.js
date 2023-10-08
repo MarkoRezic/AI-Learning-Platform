@@ -1,7 +1,7 @@
-import { team_details } from "../../styles/styles";
+import { team_details } from "../../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../axios";
-import Loader from "../../components/Loader";
+import axios from "../../../axios";
+import Loader from "../../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 
 function TeamDetails() {
@@ -22,11 +22,11 @@ function TeamDetails() {
     }, []);
 
     const openUserDetails = (user) => {
-        navigate(`/user/${user?.user_id}`);
+        navigate(`/admin/user/${user?.user_id}`);
     }
 
     const updateTeam = () => {
-        navigate(`/update-team/${team_id}`);
+        navigate(`/admin/update-team/${team_id}`);
     }
 
     return (
@@ -53,7 +53,7 @@ function TeamDetails() {
                 {
                     loadingTeam ?
                         <Loader />
-                        : team.users.map((user, user_index) =>
+                        : team?.users?.map((user, user_index) =>
                             <div className="user-row list-item"
                                 key={user_index}
                                 onClick={() => { openUserDetails(user) }}>

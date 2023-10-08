@@ -1,7 +1,7 @@
-import { user_list } from "../../styles/styles";
+import { user_list } from "../../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../axios";
-import Loader from "../../components/Loader";
+import axios from "../../../axios";
+import Loader from "../../../components/Loader";
 import { useNavigate } from "react-router-dom";
 
 function UserList() {
@@ -22,7 +22,7 @@ function UserList() {
     }, []);
 
     const openUserDetails = (user) => {
-        navigate(`/user/${user?.user_id}`);
+        navigate(`/admin/user/${user?.user_id}`);
     }
 
     return (

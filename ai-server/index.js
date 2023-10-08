@@ -31,7 +31,7 @@ app.post('/summarize', (req, res) => {
     const python = spawn('python', ['./scripts/summarize.py', text]);
     // collect data from script
     python.stdout.on('data', function (data) {
-        summarized_text = data.toString();
+        summarized_text = data.toString().replace("<pad>", "").replace("</s>", "");
         console.log('Pipe data from python script:', summarized_text);
     });
     // in close event we are sure that stream from child process is closed

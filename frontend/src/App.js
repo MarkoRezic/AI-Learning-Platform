@@ -113,6 +113,25 @@ function App() {
       ],
     },
     {
+      name: "Kartice",
+      route: null,
+      role_id: roles.user.role_id,
+      children: [
+        {
+          name: "Moje kartice",
+          route: "/cards"
+        },
+        {
+          name: "Sve kartice",
+          route: "/all-cards"
+        },
+        {
+          name: "Nova kartica",
+          route: "/new-card"
+        },
+      ],
+    },
+    {
       name: "Profil",
       route: null,
       role_id: roles.user.role_id,
@@ -136,15 +155,15 @@ function App() {
       children: [
         {
           name: "Svi projekti",
-          route: "/all-teams"
+          route: "/admin/all-teams"
         },
         {
           name: "Recenzije projekata",
-          route: "/reviews"
+          route: "/admin/reviews"
         },
         {
           name: "Dodaj projekt",
-          route: "/new-team"
+          route: "/admin/new-team"
         },
       ],
     },
@@ -155,11 +174,11 @@ function App() {
       children: [
         {
           name: "Sve lekcije",
-          route: "/all-lectures"
+          route: "/admin/all-lectures"
         },
         {
           name: "Napravi lekciju",
-          route: "/new-lecture"
+          route: "/admin/new-lecture"
         },
       ],
     },
@@ -170,19 +189,19 @@ function App() {
       children: [
         {
           name: "Moje objave",
-          route: "/posts"
+          route: "/admin/posts"
         },
         {
           name: "Sve objave",
-          route: "/all-posts"
+          route: "/admin/all-posts"
         },
         {
           name: "Svi komentari",
-          route: "/all-comments"
+          route: "/admin/all-comments"
         },
         {
           name: "Nova objava",
-          route: "/new-post"
+          route: "/admin/new-post"
         },
       ],
     },
@@ -193,15 +212,15 @@ function App() {
       children: [
         {
           name: "Moje datoteke",
-          route: "/files"
+          route: "/admin/files"
         },
         {
           name: "Sve datoteke",
-          route: "/all-files"
+          route: "/admin/all-files"
         },
         {
           name: "Prenesi datoteku",
-          route: "/new-file"
+          route: "/admin/new-file"
         },
       ],
     },
@@ -212,7 +231,22 @@ function App() {
       children: [
         {
           name: "Svi korisnici",
-          route: "/all-users"
+          route: "/admin/all-users"
+        },
+      ],
+    },
+    {
+      name: "Kartice",
+      route: null,
+      role_id: roles.admin.role_id,
+      children: [
+        {
+          name: "Sve kartice",
+          route: "/admin/all-cards"
+        },
+        {
+          name: "Nova kartica",
+          route: "/admin/new-card"
         },
       ],
     },
@@ -223,7 +257,7 @@ function App() {
       children: [
         {
           name: "Postavke",
-          route: "/settings"
+          route: "/admin/settings"
         },
         {
           name: "Odjavi se",

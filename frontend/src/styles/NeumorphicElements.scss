@@ -125,7 +125,7 @@ div {
     box-shadow: var(--shadow-none), var(--shadow-inset-none), var(--shadow-smooth-none);
 }
 
-/** ACTIVE / HOVER */
+/** FOCUS / ACTIVE / HOVER */
 
 .active-invert:hover,
 .hover-invert:hover {
@@ -150,12 +150,14 @@ div {
 }
 */
 
+.focus-invert.text-color-light:focus,
 .active-invert.text-color-light:active,
 .hover-invert.text-color-light:hover {
     color: var(--text-color-dark);
     text-shadow: var(--text-shadow-inset-small);
 }
 
+.focus-invert.text-color-grey:focus,
 .active-invert.text-color-grey:active,
 .hover-invert.text-color-grey:hover {
     color: var(--text-color-dark);
@@ -165,69 +167,81 @@ div {
 
 
 
-/** ACTIVE / HOVER SHADOW */
+/** FOCUS / ACTIVE / HOVER SHADOW */
 
+.focus-invert.shadow-small:focus,
 .active-invert.shadow-small:active,
 .hover-invert.shadow-small:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-small), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-mid:focus,
 .active-invert.shadow-mid:active,
 .hover-invert.shadow-mid:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-large:focus,
 .active-invert.shadow-large:active,
 .hover-invert.shadow-large:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-xlarge:focus,
 .active-invert.shadow-xlarge:active,
 .hover-invert.shadow-xlarge:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
 }
 
 
-/** ACTIVE / HOVER SHADOW-SMOOTH */
+/** FOCUS / ACTIVE / HOVER SHADOW-SMOOTH */
 
+.focus-invert.shadow-smooth-small:focus,
 .active-invert.shadow-smooth-small:active,
 .hover-invert.shadow-smooth-small:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-small), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-smooth-mid:focus,
 .active-invert.shadow-smooth-mid:active,
 .hover-invert.shadow-smooth-mid:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-smooth-large:focus,
 .active-invert.shadow-smooth-large:active,
 .hover-invert.shadow-smooth-large:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-smooth-xlarge:focus,
 .active-invert.shadow-smooth-xlarge:active,
 .hover-invert.shadow-smooth-xlarge:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
 }
 
 
-/** ACTIVE / HOVER SHADOW SHADOW-SMOOTH */
+/** FOCUS / ACTIVE / HOVER SHADOW SHADOW-SMOOTH */
 
+.focus-invert.shadow-small.shadow-smooth-small:focus,
 .active-invert.shadow-small.shadow-smooth-small:active,
 .hover-invert.shadow-small.shadow-smooth-small:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-small), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-small.shadow-smooth-mid:focus,
 .active-invert.shadow-small.shadow-smooth-mid:active,
 .hover-invert.shadow-small.shadow-smooth-mid:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-small.shadow-smooth-large:focus,
 .active-invert.shadow-small.shadow-smooth-large:active,
 .hover-invert.shadow-small.shadow-smooth-large:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-small.shadow-smooth-xlarge:focus,
 .active-invert.shadow-small.shadow-smooth-xlarge:active,
 .hover-invert.shadow-small.shadow-smooth-xlarge:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
@@ -235,21 +249,25 @@ div {
 
 
 
+.focus-invert.shadow-mid.shadow-smooth-small:focus,
 .active-invert.shadow-mid.shadow-smooth-small:active,
 .hover-invert.shadow-mid.shadow-smooth-small:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-mid.shadow-smooth-mid:focus,
 .active-invert.shadow-mid.shadow-smooth-mid:active,
 .hover-invert.shadow-mid.shadow-smooth-mid:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-mid.shadow-smooth-large:focus,
 .active-invert.shadow-mid.shadow-smooth-large:active,
 .hover-invert.shadow-mid.shadow-smooth-large:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-mid.shadow-smooth-xlarge:focus,
 .active-invert.shadow-mid.shadow-smooth-xlarge:active,
 .hover-invert.shadow-mid.shadow-smooth-xlarge:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
@@ -257,21 +275,25 @@ div {
 
 
 
+.focus-invert.shadow-large.shadow-smooth-small:focus,
 .active-invert.shadow-large.shadow-smooth-small:active,
 .hover-invert.shadow-large.shadow-smooth-small:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-large.shadow-smooth-mid:focus,
 .active-invert.shadow-large.shadow-smooth-mid:active,
 .hover-invert.shadow-large.shadow-smooth-mid:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-large.shadow-smooth-large:focus,
 .active-invert.shadow-large.shadow-smooth-large:active,
 .hover-invert.shadow-large.shadow-smooth-large:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-large), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-large.shadow-smooth-xlarge:focus,
 .active-invert.shadow-large.shadow-smooth-xlarge:active,
 .hover-invert.shadow-large.shadow-smooth-xlarge:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
@@ -279,43 +301,51 @@ div {
 
 
 
+.focus-invert.shadow-xlarge.shadow-smooth-small:focus,
 .active-invert.shadow-xlarge.shadow-smooth-small:active,
 .hover-invert.shadow-xlarge.shadow-smooth-small:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-xlarge.shadow-smooth-mid:focus,
 .active-invert.shadow-xlarge.shadow-smooth-mid:active,
 .hover-invert.shadow-xlarge.shadow-smooth-mid:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-xlarge.shadow-smooth-large:focus,
 .active-invert.shadow-xlarge.shadow-smooth-large:active,
 .hover-invert.shadow-xlarge.shadow-smooth-large:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
 }
 
+.focus-invert.shadow-xlarge.shadow-smooth-xlarge:focus,
 .active-invert.shadow-xlarge.shadow-smooth-xlarge:active,
 .hover-invert.shadow-xlarge.shadow-smooth-xlarge:hover {
     box-shadow: var(--shadow-none), var(--shadow-inset-xlarge), var(--shadow-smooth-none) !important;
 }
 
-/** ACTIVE / HOVER BULDGE */
+/** FOCUS / ACTIVE / HOVER BULDGE */
 
+.focus-invert.buldge-small:focus,
 .active-invert.buldge-small:active,
 .hover-invert.buldge-small:active {
     background: var(--dip-small);
 }
 
+.focus-invert.buldge-mid:focus,
 .active-invert.buldge-mid:active,
 .hover-invert.buldge-mid:active {
     background: var(--dip-mid);
 }
 
+.focus-invert.buldge-large:focus,
 .active-invert.buldge-large:active,
 .hover-invert.buldge-large:active {
     background: var(--dip-large);
 }
 
+.focus-invert.buldge-xlarge:focus,
 .active-invert.buldge-xlarge:active,
 .hover-invert.buldge-xlarge:active {
     background: var(--dip-xlarge);
@@ -622,7 +652,8 @@ div {
 
 input[type="text"],
 input[type="password"],
-input[type="number"] {
+input[type="number"],
+textarea {
     @extend .shadow-small;
     @extend .shadow-inset-small;
     @extend .border-small;
@@ -632,6 +663,7 @@ input[type="number"] {
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 600;
+    resize: none;
 }
 
 .list-item {
@@ -714,10 +746,18 @@ input[type="number"] {
             width: 150px;
         }
 
-        input:not([type="checkbox"]) {
+        label:has(+textarea) {
+            align-self: flex-start;
+        }
+
+        input:not([type="checkbox"]),
+        textarea {
             margin-bottom: 0;
-            margin-left: auto;
             flex-grow: 1;
+        }
+
+        textarea {
+            height: fit-content;
         }
 
 
@@ -764,6 +804,64 @@ input[type="number"] {
         input[type="checkbox"]:checked::before {
             opacity: 1;
         }
+
+        .react-select-container {
+            flex-grow: 1;
+        }
+
+        .react-select__control {
+            @extend .surface-primary-100;
+            @extend .shadow-mid;
+            @extend .rounded-mid;
+            @extend .focus-invert;
+            @extend .active-invert;
+            @extend .transition-smooth;
+
+            flex-grow: 1;
+            padding: 0px 10px;
+        }
+
+        .react-select__menu {
+            @extend .surface-primary-200;
+            @extend .shadow-inset-mid;
+            @extend .rounded-large;
+            @extend .transition-smooth;
+
+            overflow: hidden;
+        }
+
+        .react-select__option {
+            @extend .hover-invert;
+            @extend .transition-smooth;
+
+            background: transparent;
+        }
+
+        .react-select__placeholder {
+            @extend .text-color-grey;
+            @extend .text-shadow-small;
+            @extend .transition-smooth;
+        }
+
+        .react-select__single-value {
+            @extend .text-color-light;
+            @extend .text-shadow-small;
+            @extend .transition-smooth;
+        }
+
+        .react-select__control--menu-is-open {
+            @extend .focus-invert, .shadow-mid, :focus;
+
+            .react-select__placeholder {
+                @extend .focus-invert, .text-color-dark, :focus;
+                @extend .focus-invert, .text-shadow-inset-small, :focus;
+            }
+
+            .react-select__single-value {
+                @extend .focus-invert, .text-color-dark, :focus;
+                @extend .focus-invert, .text-shadow-inset-small, :focus;
+            }
+        }
     }
 
     .input-card-submit {
@@ -775,5 +873,23 @@ input[type="number"] {
         padding: 10px 20px;
         font-size: 16px;
         font-weight: bold;
+        margin-top: 20px;
     }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    @extend .shadow-inset-small;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    @extend .surface-primary-100;
+    @extend .shadow-smooth-small;
+
+    border-radius: 10px;
 }

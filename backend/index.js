@@ -9,6 +9,7 @@ const express = require('express');
 const authRouter = require('./routers/authRouter.js');
 const teamRouter = require('./routers/teamRouter.js');
 const userRouter = require('./routers/userRouter.js');
+const cardRouter = require('./routers/cardRouter.js');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const database = require('./database.js');
@@ -59,6 +60,7 @@ app.get('/oauth/callback', async (req, res) => {
 app.use('/auth', authRouter);
 app.use('/teams', teamRouter);
 app.use('/users', userRouter);
+app.use('/cards', cardRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

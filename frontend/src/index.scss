@@ -174,10 +174,12 @@ button {
   border-color: var(--color-surface-primary-100);
 }
 
-input {
+input,
+textarea {
   outline: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   filter: var(--hover-filter);
 }

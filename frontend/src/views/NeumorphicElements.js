@@ -123,6 +123,8 @@ function NeumorphicElements() {
                     <label>hover</label>
                     <input type="radio" value="active" onChange={(e) => { setInvert(e.target.value) }} name="invert" />
                     <label>active</label>
+                    <input type="radio" value="focus" onChange={(e) => { setInvert(e.target.value) }} name="invert" />
+                    <label>focus</label>
                 </div>
                 <div className="property-row">
                     <p>transition</p>

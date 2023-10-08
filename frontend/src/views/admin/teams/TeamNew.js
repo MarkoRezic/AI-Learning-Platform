@@ -1,7 +1,7 @@
-import { team_update } from "../../styles/styles";
+import { team_new, team_update } from "../../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../axios";
-import Loader from "../../components/Loader";
+import axios from "../../../axios";
+import Loader from "../../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 
 function TeamNew() {
@@ -22,7 +22,7 @@ function TeamNew() {
             approved,
         }).then((response) => {
             console.log(response.data);
-            navigate(`/team/${response.data?.result?.insertId}`);
+            navigate(`/admin/team/${response.data?.result?.insertId}`);
         }).catch((error) => {
             console.log(error);
         });

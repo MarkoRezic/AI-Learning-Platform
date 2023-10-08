@@ -1,7 +1,7 @@
-import { team_list } from "../../styles/styles";
+import { team_list } from "../../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../axios";
-import Loader from "../../components/Loader";
+import axios from "../../../axios";
+import Loader from "../../../components/Loader";
 import { useNavigate } from "react-router-dom";
 
 function TeamList() {
@@ -22,7 +22,7 @@ function TeamList() {
     }, []);
 
     const openTeamDetails = (team) => {
-        navigate(`/team/${team?.team_id}`);
+        navigate(`/admin/team/${team?.team_id}`);
     }
 
     return (

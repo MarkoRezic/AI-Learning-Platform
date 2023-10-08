@@ -7,6 +7,8 @@ export const DataContext = createContext();
 export const DataProvider = (props) => {
 
     const {
+        loading,
+        setLoading,
         user,
         setUser,
         adminLogin,
@@ -17,6 +19,8 @@ export const DataProvider = (props) => {
     return (
         <DataContext.Provider value={
             {
+                loading,
+                setLoading,
                 user,
                 setUser,
                 adminLogin,
@@ -30,17 +34,20 @@ export const DataProvider = (props) => {
 }
 
 const useProviderFunctions = () => {
+    const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
 
     useEffect(() => {
         axios.get('auth').then((response => {
             console.log(response);
             setUser(response?.data?.result);
+            setLoading(false);
         })).catch((error) => {
             console.log(error)
             if ([401, 403, 404].includes(error?.response?.status)) {
 
             }
+            setLoading(false);
         })
         return () => {
 
@@ -82,6 +89,8 @@ const useProviderFunctions = () => {
     }
 
     return {
+        loading,
+        setLoading,
         user,
         setUser,
         adminLogin,

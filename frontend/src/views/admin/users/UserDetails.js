@@ -1,8 +1,8 @@
 //import "../../styles/UserDetails.scss";
-import { user_details } from "../../styles/styles";
+import { user_details } from "../../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../axios";
-import Loader from "../../components/Loader";
+import axios from "../../../axios";
+import Loader from "../../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 
 function UserDetails() {
@@ -34,7 +34,7 @@ function UserDetails() {
     }, []);
 
     const openTeamDetails = (team) => {
-        navigate(`/team/${team?.team_id}`);
+        navigate(`/admin/team/${team?.team_id}`);
     }
 
     return (

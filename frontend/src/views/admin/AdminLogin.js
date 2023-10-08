@@ -61,7 +61,7 @@ function AdminLogin() {
         context.adminLogin(email, password, {
             callback: (response) => {
                 setLoading(false);
-                navigate('/')
+                navigate('/admin')
             },
             errorCallback: (error) => {
                 if ([404].includes(error?.response?.status)) {
