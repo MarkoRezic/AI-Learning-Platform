@@ -1,8 +1,9 @@
-import { user_list } from "../../../styles/styles";
+import { user_list } from "../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../../axios";
-import Loader from "../../../components/Loader";
+import axios from "../../axios";
+import Loader from "../../components/Loader";
 import { useNavigate } from "react-router-dom";
+import { prefixRoute } from "../../utils/prefix_route";
 
 function UserList() {
     const navigate = useNavigate();
@@ -22,11 +23,12 @@ function UserList() {
     }, []);
 
     const openUserDetails = (user) => {
-        navigate(`/admin/user/${user?.user_id}`);
+        navigate(`${prefixRoute()}/user/${user?.user_id}`);
     }
 
     return (
         <div id="user-list">
+            <h1>Svi korisnici</h1>
             {
                 loading ?
                     <Loader />

@@ -1,9 +1,10 @@
-import { team_update } from "../../../styles/styles";
+import { team_update } from "../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../../axios";
-import Loader from "../../../components/Loader";
+import axios from "../../axios";
+import Loader from "../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
-import useDebounce from "../../../utils/use_debounce";
+import useDebounce from "../../utils/use_debounce";
+import { prefixRoute } from "../../utils/prefix_route";
 
 function TeamUpdate() {
     const navigate = useNavigate();
@@ -32,6 +33,9 @@ function TeamUpdate() {
         }).catch((error) => {
             console.log(error);
             setLoadingTeam(false);
+            if ([401, 403, 404].includes(error?.response?.status)) {
+                navigate("/error");
+            }
         });
 
         updateSearch('');
@@ -47,9 +51,12 @@ function TeamUpdate() {
             users: team?.users,
         }).then((response) => {
             console.log(response.data);
-            navigate(`/admin/team/${team_id}`);
+            navigate(`${prefixRoute()}/team/${team_id}`);
         }).catch((error) => {
             console.log(error);
+            if ([401, 403, 404].includes(error?.response?.status)) {
+                navigate("/error");
+            }
         });
     }
 
@@ -98,6 +105,7 @@ function TeamUpdate() {
 
     return (
         <div id="team-update">
+            <h1>Uredi projekt</h1>
             <div className="team-input-card input-card">
                 {
                     loadingTeam ?

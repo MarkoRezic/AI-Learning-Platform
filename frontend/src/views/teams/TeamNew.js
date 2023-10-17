@@ -1,14 +1,15 @@
-import { team_new, team_update } from "../../../styles/styles";
+import { team_new, team_update } from "../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../../axios";
-import Loader from "../../../components/Loader";
+import axios from "../../axios";
+import Loader from "../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
+import { prefixRoute } from "../../utils/prefix_route";
 
 function TeamNew() {
     const navigate = useNavigate();
-    const [team_name, setTeamName] = useState(null);
-    const [project_name, setProjectName] = useState(null);
-    const [project_github_link, setProjectGithubLink] = useState(null);
+    const [team_name, setTeamName] = useState('');
+    const [project_name, setProjectName] = useState('');
+    const [project_github_link, setProjectGithubLink] = useState('');
     const [academic_year, setAcademicYear] = useState(new Date().getFullYear());
     const [approved, setApproved] = useState(0);
     const [users, setUsers] = useState([]);
@@ -22,7 +23,7 @@ function TeamNew() {
             approved,
         }).then((response) => {
             console.log(response.data);
-            navigate(`/admin/team/${response.data?.result?.insertId}`);
+            navigate(`${prefixRoute()}/team/${response.data?.result?.insertId}`);
         }).catch((error) => {
             console.log(error);
         });
@@ -30,6 +31,7 @@ function TeamNew() {
 
     return (
         <div id="team-update">
+            <h1>Novi projekt</h1>
             <div className="team-input-card input-card">
                 <div className="input-card-row">
                     <label>Naziv tima</label>

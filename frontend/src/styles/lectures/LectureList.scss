@@ -1,0 +1,11 @@
+#lecture-list {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: flex-start;
+    align-items: center;
+
+    :first-child {
+        align-self: flex-start;
+    }
+}

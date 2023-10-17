@@ -1,9 +1,10 @@
 //import "../../styles/UserDetails.scss";
-import { user_details } from "../../../styles/styles";
+import { user_details } from "../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../../axios";
-import Loader from "../../../components/Loader";
+import axios from "../../axios";
+import Loader from "../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
+import { prefixRoute } from "../../utils/prefix_route";
 
 function UserDetails() {
     const navigate = useNavigate();
@@ -21,6 +22,9 @@ function UserDetails() {
         }).catch((error) => {
             console.log(error);
             setLoadingUser(false);
+            if ([401, 403, 404].includes(error?.response?.status)) {
+                navigate("/error");
+            }
         });
 
         axios.get(`teams/user/${user_id}`).then((response) => {
@@ -34,11 +38,12 @@ function UserDetails() {
     }, []);
 
     const openTeamDetails = (team) => {
-        navigate(`/admin/team/${team?.team_id}`);
+        navigate(`${prefixRoute()}/team/${team?.team_id}`);
     }
 
     return (
         <div id="user-details">
+            <h1>Detalji korisnika</h1>
             <div className="user-card shadow-large dip-mid rounded-large  ">
                 {
                     loadingUser ?
@@ -55,6 +60,7 @@ function UserDetails() {
                         </>
                 }
             </div>
+            <h2>Projekti</h2>
             <div className="user-teams">
                 {
                     loadingTeams ?

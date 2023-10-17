@@ -1,21 +1,17 @@
-import { card_update } from "../../../styles/styles";
+import { card_update } from "../../styles/styles";
 import { useEffect, useState } from "react";
-import axios from "../../../axios";
-import Loader from "../../../components/Loader";
+import axios from "../../axios";
+import Loader from "../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
-import useDebounce from "../../../utils/use_debounce";
-import card_types from "../../../constants/card_types";
-import Select from 'react-select';
-import { updateTextInputSize } from "../../../utils/autosize_text_input";
+import useDebounce from "../../utils/use_debounce";
+import card_types from "../../constants/card_types";
+import { prefixRoute } from "../../utils/prefix_route";
 
 function CardUpdate() {
     const navigate = useNavigate();
     const { card_id } = useParams();
     const [card, setCard] = useState(null);
-    const [card_type_id, setCardTypeId] = useState(null);
     const [name, setName] = useState(null);
-    const [text, setText] = useState(null);
-    const [question, setQuestion] = useState(null);
     const [is_public, setPublic] = useState(null);
     const [users, setUsers] = useState(null);
     const [loadingCard, setLoadingCard] = useState(true);
@@ -26,11 +22,8 @@ function CardUpdate() {
             console.log(response.data);
             let card = response.data?.result;
             setCard(card);
-            setCardTypeId(card?.card_type_id);
             setName(card?.name);
-            setText(card?.text);
-            setQuestion(card?.question);
-            setPublic(card?.is_public);
+            setPublic(card?.public);
             setLoadingCard(false);
         }).catch((error) => {
             console.log(error);
@@ -42,15 +35,12 @@ function CardUpdate() {
 
     const saveCard = () => {
         axios.put(`cards/${card_id}`, {
-            card_type_id,
             name,
-            text,
-            question,
-            is_public,
+            public: is_public,
             users: card?.users,
         }).then((response) => {
             console.log(response.data);
-            navigate(`/admin/card/${card_id}`);
+            navigate(`${prefixRoute()}/card/${card_id}`);
         }).catch((error) => {
             console.log(error);
         });
@@ -108,39 +98,28 @@ function CardUpdate() {
                         : <>
                             <div className="input-card-row">
                                 <label>Tip kartice</label>
-                                <Select
-                                    isSearchable={false}
-                                    isClearable={false}
-                                    isMulti={false}
-                                    value={card_type_id}
-                                    placeholder={"Odaberi Tip"}
-                                    components={{
-                                        IndicatorSeparator: () => null
-                                    }}
-                                    onChange={(option) => { setCardTypeId(option.value) }}
-                                    options={Object.entries(card_types).map(([card_type_key, card_type], card_type_index) => {
-                                        return {
-                                            value: card_type.card_type_id,
-                                            label: card_type.text
-                                        }
-                                    }
-                                    )}
-                                    className="react-select-container"
-                                    classNamePrefix="react-select"
-                                />
+                                <input className="card-card-type" type="text" value={
+                                    Object.entries(card_types)
+                                        .filter(([card_type_key, card_type], card_type_index) =>
+                                            card_type.card_type_id === card?.card_type_id)?.[0]?.[1]?.text
+                                } onChange={(e) => { setName(e.target.value) }} readOnly={true} />
                             </div>
                             <div className="input-card-row">
                                 <label>Naziv kartice</label>
                                 <input className="card-card-name" type="text" value={name} onChange={(e) => { setName(e.target.value) }} />
                             </div>
                             <div className="input-card-row">
-                                <label>Tekst</label>
-                                <input className="card-project-name" type="text" value={text} onChange={(e) => { setText(e.target.value) }} />
+                                <label>{card?.card_type_id === card_types.question.card_type_id ? "Odgovor" : "Sažeti tekst"}</label>
+                                <textarea id="answer-textarea" className="card-text" rows={10} spellCheck={false} value={card?.text} readOnly={true} />
                             </div>
-                            <div className="input-card-row">
-                                <label>Pitanje</label>
-                                <input className="card-project-github-link" type="text" value={question} onChange={(e) => { setQuestion(e.target.value) }} />
-                            </div>
+                            {
+                                card?.card_type_id === card_types.question.card_type_id ?
+                                    <div className="input-card-row">
+                                        <label>Pitanje</label>
+                                        <textarea id="question-textarea" className="card-question" rows={6} value={card?.question} />
+                                    </div>
+                                    : null
+                            }
                             <div className="input-card-row">
                                 <label>Javno</label>
                                 <input className="card-approved" type="checkbox" checked={is_public === 1} onChange={(e) => { setPublic(e.target.checked === true ? 1 : 0) }} />
@@ -168,7 +147,7 @@ function CardUpdate() {
                     }
                 </div>
                 <div className="card-users-search">
-                    <p>Dodaj članove u tim:</p>
+                    <p>Dopusti pristup korisnicima:</p>
                     <input type="text" className="card-users-search-input" onChange={(e) => { updateSearch(e.target.value) }} />
                     {
                         loadingUsers ?

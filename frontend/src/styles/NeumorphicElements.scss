@@ -91,9 +91,19 @@
     border-color: var(--color-surface-primary-100);
 }
 
+.surface-primary-100-important {
+    background-color: var(--color-surface-primary-100) !important;
+    border-color: var(--color-surface-primary-100) !important;
+}
+
 .surface-primary-200 {
     background-color: var(--color-surface-primary-200);
     border-color: var(--color-surface-primary-200);
+}
+
+.surface-primary-200-important {
+    background-color: var(--color-surface-primary-200) !important;
+    border-color: var(--color-surface-primary-200) !important;
 }
 
 .surface-primary-300 {
@@ -365,6 +375,10 @@ div {
     color: var(--text-color-light);
 }
 
+.text-color-light-important {
+    color: var(--text-color-light) !important;
+}
+
 .text-color-grey {
     color: var(--text-color-grey);
 }
@@ -399,6 +413,10 @@ div {
 
 .shadow-inset-mid {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none);
+}
+
+.shadow-inset-mid-important {
+    box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none) !important;
 }
 
 .shadow-inset-large {
@@ -616,6 +634,11 @@ div {
     border-width: var(--border-small);
 }
 
+.border-small-important {
+    border-style: solid !important;
+    border-width: var(--border-small) !important;
+}
+
 .border-mid {
     border-width: var(--border-mid);
 }
@@ -678,6 +701,7 @@ textarea {
     align-items: center;
     justify-content: space-between;
     padding: 8px;
+    margin-bottom: 12px;
 
     >div {
         padding: 4px 16px;
@@ -685,6 +709,12 @@ textarea {
 
     >div:not(:last-child) {
         border-right: 1px solid black;
+    }
+
+    .user-remove {
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -807,6 +837,7 @@ textarea {
 
         .react-select-container {
             flex-grow: 1;
+            z-index: 10;
         }
 
         .react-select__control {
@@ -877,8 +908,275 @@ textarea {
     }
 }
 
+.card-list-item,
+.file-list-item {
+    @extend .shadow-small;
+    @extend .dip-small;
+    @extend .rounded-large;
+    @extend .hover-invert;
+    @extend .transition-smooth;
+}
+
+.lecture-dropdown-button {
+    @extend .surface-primary-100-important;
+    @extend .shadow-smooth-small;
+    @extend .rounded-small;
+    @extend .hover-invert;
+    @extend .transition-smooth;
+    @extend .text-color-light-important;
+    @extend .text-shadow-small;
+}
+
+.lecture-dropdown-menu {
+    @extend .surface-primary-200-important;
+    @extend .shadow-inset-mid-important;
+    @extend .rounded-small;
+    @extend .text-color-light-important;
+    @extend .text-shadow-small;
+
+    ul {
+        margin: 0 !important;
+    }
+}
+
+.lecture-dropdown-item {
+    @extend .rounded-small;
+    @extend .hover-invert;
+    @extend .transition-smooth;
+    @extend .text-color-light-important;
+    @extend .text-shadow-small;
+
+    background: transparent !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    img {
+        width: 14px;
+        filter: brightness(0.9);
+        justify-self: flex-end;
+    }
+}
+
+.lecture-dropdown-submenu {
+    @extend .surface-primary-200-important;
+    @extend .shadow-inset-mid-important;
+    @extend .rounded-small;
+    @extend .text-color-light-important;
+    @extend .text-shadow-small;
+
+    top: 0px !important;
+    left: 100% !important;
+    min-width: fit-content !important;
+
+    ul {
+        margin: 0 !important;
+    }
+}
+
+.keyword-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 600;
+
+    .keyword-chip {
+        @extend .surface-primary-200;
+        @extend .shadow-small;
+        @extend .rounded-small;
+        @extend .hover-invert;
+        @extend .transition-smooth;
+        @extend .text-color-light;
+        @extend .text-shadow-small;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 5px 12px;
+        margin: 10px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+.technology-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    .technology-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        width: fit-content;
+        height: fit-content;
+        margin: 5px 12px;
+
+        .img-wrapper {
+            @extend .surface-primary-200;
+            @extend .shadow-small;
+            @extend .rounded-small;
+            @extend .hover-invert;
+            @extend .border-small;
+            @extend .transition-smooth;
+            @extend .text-color-light;
+            @extend .text-shadow-small;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+.lecture-return {
+    @extend .surface-primary-100;
+    @extend .shadow-smooth-small;
+    @extend .rounded-small;
+    @extend .active-invert;
+    @extend .transition-smooth;
+    @extend .text-color-light;
+    @extend .text-shadow-small;
+
+    img {
+        @extend .transition-smooth;
+        filter: brightness(1);
+    }
+
+    &:active img {
+        filter: brightness(0);
+    }
+}
+
+.generate-card-button {
+    @extend .surface-primary-100;
+    @extend .shadow-smooth-small;
+    @extend .rounded-small;
+    @extend .active-invert;
+    @extend .transition-smooth;
+    @extend .text-color-light;
+    @extend .text-shadow-small;
+}
+
+.generate-card-remove {
+    @extend .surface-primary-100;
+    @extend .shadow-smooth-small;
+    @extend .rounded-small;
+    @extend .active-invert;
+    @extend .transition-smooth;
+    @extend .text-color-light;
+    @extend .text-shadow-small;
+}
+
+.lecture-join-button {
+    @extend .surface-primary-100;
+    @extend .shadow-smooth-small;
+    @extend .rounded-small;
+    @extend .active-invert;
+    @extend .transition-smooth;
+    @extend .text-color-light;
+    @extend .text-shadow-small;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.file-upload-dropzone {
+    @extend .surface-primary-100-important;
+    @extend .shadow-small;
+    @extend .shadow-inset-small;
+    @extend .border-small-important;
+    @extend .rounded-small;
+
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    resize: none;
+    justify-content: center;
+    border-color: var(--color-surface-100) !important;
+    overflow: hidden !important;
+    outline: none !important;
+
+    &.file-upload-dropzone-active {
+        @extend .shadow-inset-large;
+
+        .file-upload-input-label {
+            @extend :hover;
+        }
+    }
+
+    &:has(.file-upload-preview) {
+        padding: 10px !important;
+        min-height: fit-content
+    }
+
+    .file-upload-input-label {
+        @extend .hover-invert;
+        @extend .transition-smooth;
+        @extend .text-color-light;
+        @extend .text-shadow-small;
+
+        position: relative;
+        box-shadow: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        width: 100% !important;
+        height: 100%;
+        flex-grow: 1;
+        align-self: stretch;
+    }
+
+    .file-upload-preview {
+        border: none !important;
+        padding: 10px !important;
+
+        .dzu-previewFileName {
+            @extend .text-color-light;
+            @extend .text-shadow-small;
+
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .dzu-previewButton {
+            @extend .text-color-light;
+
+            filter: brightness(20) !important;
+            padding: 10px;
+        }
+    }
+}
+
+
+
+
 ::-webkit-scrollbar {
     width: 10px;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar-track {
@@ -892,4 +1190,5 @@ textarea {
     @extend .shadow-smooth-small;
 
     border-radius: 10px;
+    overflow: hidden;
 }

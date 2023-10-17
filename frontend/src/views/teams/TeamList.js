@@ -1,17 +1,21 @@
-import { team_list } from "../../../styles/styles";
-import { useEffect, useState } from "react";
-import axios from "../../../axios";
-import Loader from "../../../components/Loader";
+import { team_list } from "../../styles/styles";
+import { useContext, useEffect, useState } from "react";
+import axios from "../../axios";
+import Loader from "../../components/Loader";
 import { useNavigate } from "react-router-dom";
+import { DataContext } from "../../Context";
+import { prefixRoute } from "../../utils/prefix_route";
 
-function TeamList() {
+function TeamList({ user, ...rest }) {
+    const context = useContext(DataContext);
     const navigate = useNavigate();
     const [teamList, setTeamList] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    console.log(user);
 
-        axios.get(`teams`).then((response) => {
+    useEffect(() => {
+        axios.get(`teams${user === true ? `/user/${context?.user?.user_id}` : ''}`).then((response) => {
             console.log(response.data);
             setTeamList(response.data?.result);
             setLoading(false);
@@ -19,14 +23,15 @@ function TeamList() {
             console.log(error);
             setLoading(false);
         });
-    }, []);
+    }, [user]);
 
     const openTeamDetails = (team) => {
-        navigate(`/admin/team/${team?.team_id}`);
+        navigate(`${prefixRoute()}/team/${team?.team_id}`);
     }
 
     return (
         <div id="team-list">
+            <h1>{user === true ? "Moji" : "Svi"} projekti</h1>
             {
                 loading ?
                     <Loader />

@@ -45,11 +45,23 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
+
+        .card-creator {
+            display: flex;
+            align-items: center;
+
+            img {
+                max-width: 50px;
+                max-height: 50px;
+                border-radius: 50px;
+            }
+        }
     }
 
     .card-card-info>div {
         padding: 4px 8px;
-        height: 24px;
+        height: fit-content;
+        min-height: 24px;
     }
 
     .card-card-info>div:not(:last-child) {

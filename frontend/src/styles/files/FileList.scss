@@ -1,0 +1,96 @@
+#file-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px;
+
+    .file-list-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .file-list-item {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            margin: 10px;
+            padding: 8px;
+            width: 130px;
+            height: 210px;
+
+            p,
+            div {
+                margin: 0;
+                margin-bottom: 8px;
+                font-size: 12px;
+            }
+
+            .file-list-item-name {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: bold;
+                font-size: 11px;
+
+                img {
+                    max-height: 32px;
+                    max-width: 32px;
+                    border-radius: 50px;
+                    margin-left: 12px;
+                }
+            }
+
+            .file-list-item-type {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 11px;
+
+                span {
+                    margin-left: 12px;
+                }
+            }
+
+            svg {
+                max-height: 120px;
+                margin-top: 10px;
+            }
+
+            .file-list-item-public {
+                margin-top: auto;
+            }
+        }
+    }
+
+    .file-table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .file-table tr:not(:first-child):hover {
+        cursor: pointer;
+        filter: var(--hover-filter);
+    }
+
+    .file-table tr:nth-child(odd) {
+        background-color: var(--color-surface-primary-100);
+    }
+
+    .file-table tr:nth-child(even) {
+        background-color: var(--color-surface-primary-200);
+    }
+
+    .file-table td,
+    .file-table th {
+        text-align: left;
+        padding: 8px;
+    }
+
+    .file-table td:first-child {
+        text-align: center;
+    }
+}

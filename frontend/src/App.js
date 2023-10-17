@@ -3,6 +3,7 @@ import './App.scss';
 import { Link, Outlet } from "react-router-dom";
 import { DataContext } from './Context';
 import roles from './constants/roles';
+import Loader from './components/Loader';
 
 function App() {
   const context = useContext(DataContext)
@@ -261,7 +262,7 @@ function App() {
         },
         {
           name: "Odjavi se",
-          route: null,
+          route: "/",
           on_click: context.logout
         },
       ],
@@ -286,7 +287,10 @@ function App() {
             </div>)
         }
       </header>
-      <Outlet />
+      {
+        context?.loading ? <Loader />
+          : <Outlet />
+      }
     </div>
   );
 }

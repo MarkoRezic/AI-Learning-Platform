@@ -10,6 +10,9 @@ const authRouter = require('./routers/authRouter.js');
 const teamRouter = require('./routers/teamRouter.js');
 const userRouter = require('./routers/userRouter.js');
 const cardRouter = require('./routers/cardRouter.js');
+const lectureRouter = require('./routers/lectureRouter.js');
+const technologyRouter = require('./routers/technologyRouter.js');
+const fileRouter = require('./routers/fileRouter.js');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const database = require('./database.js');
@@ -21,11 +24,14 @@ axios.defaults.withCredentials = true;
 
 const app = express();
 
+
+
 app.use(cors({
     origin: true,
     credentials: true,
     preflightContinue: true,
 }));
+app.use(express.static('public'))
 app.use(cookieParser());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -61,6 +67,9 @@ app.use('/auth', authRouter);
 app.use('/teams', teamRouter);
 app.use('/users', userRouter);
 app.use('/cards', cardRouter);
+app.use('/lectures', lectureRouter);
+app.use('/technologies', technologyRouter);
+app.use('/files', fileRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

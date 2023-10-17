@@ -1,0 +1,85 @@
+#file-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+
+    .file-card {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .file-card img {
+        display: flex;
+        height: 100%;
+        margin-right: 10px;
+        overflow: hidden;
+        padding: 8px;
+    }
+
+    .divider {
+        background-color: rgba(0, 0, 0, 1);
+        display: flex;
+    }
+
+    .divider.horizontal {
+        flex-direction: row;
+        height: 1px;
+        width: 100%;
+    }
+
+    .divider.vertical {
+        flex-direction: column;
+        width: 1px;
+        height: 100%;
+    }
+
+    .file-card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+
+        .file-creator {
+            display: flex;
+            align-items: center;
+
+            img {
+                max-width: 50px;
+                max-height: 50px;
+                border-radius: 50px;
+            }
+        }
+
+        .file-text {
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 500px;
+            padding: 20px 40px;
+        }
+    }
+
+    .file-card-info>div {
+        padding: 4px 8px;
+        height: fit-content;
+        min-height: 24px;
+    }
+
+    .file-card-info>div:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    .file-users {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 40px;
+    }
+}

@@ -4,7 +4,7 @@ const database = require('../database.js');
 const embedParamsMiddleware = require('../middleware/embedParams.js');
 const permission1Middleware = require('../middleware/permission1.js');
 const handleSQLError = require('../middleware/handleSQLError.js');
-const roles = require('../constants/roles.js');
+const roles = require('../../frontend/src/constants/roles.js');
 
 userRouter.use(embedParamsMiddleware);
 

@@ -1,0 +1,20 @@
+#file-update {
+    .input-card {
+        width: 700px;
+    }
+
+    .generate-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        .generate-card-remove {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 20px;
+        }
+    }
+}

@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const permission1Middleware = express.Router();
 const session1Middleware = require('../middleware/session1.js');
-const roles = require("../constants/roles.js");
+const roles = require("../../frontend/src/constants/roles.js");
 
 permission1Middleware.use("/*", session1Middleware);
 

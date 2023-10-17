@@ -4,7 +4,7 @@ const database = require('../database.js');
 const embedParamsMiddleware = require('../middleware/embedParams.js');
 const permission0Middleware = require('../middleware/permission0.js');
 const handleSQLError = require('../middleware/handleSQLError.js');
-const roles = require('../constants/roles.js');
+const roles = require('../../frontend/src/constants/roles.js');
 
 teamRouter.use(embedParamsMiddleware);
 
@@ -205,12 +205,15 @@ teamRouter.put('/:team_id', (req, res) => {
                     FROM team_users
                     WHERE team_id = ?;
 
-                    INSERT IGNORE
-                    INTO team_users
-                    (
-                    team_id,
-                    user_id
-                    ) VALUES ?`,
+                    ${users?.length > 0 ?
+                        `INSERT IGNORE
+                        INTO team_users
+                        (
+                        team_id,
+                        user_id
+                        ) VALUES ?`
+                        : ''
+                    }`,
                     [
                         req.params.team_id,
                         users.map((user) => [
