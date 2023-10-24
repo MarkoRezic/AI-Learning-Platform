@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 12px;
+    margin: 20px;
     padding: var(--shadow-offset-mid);
     z-index: 9999;
   }
@@ -32,13 +32,6 @@
 
   .dropdown:last-child .dropbtn {
     margin-left: auto;
-    border-top-right-radius: 200px !important;
-    border-bottom-right-radius: 200px !important;
-  }
-
-  .dropdown:first-child .dropbtn {
-    border-top-left-radius: 200px !important;
-    border-bottom-left-radius: 200px !important;
   }
 
   /* Dropdown Content (Hidden by Default) */

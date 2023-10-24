@@ -46,13 +46,13 @@ function UserList() {
                             {
                                 userList.map((user, user_index) =>
                                     <tr className="user-row" key={user_index} onClick={() => { openUserDetails(user) }}>
-                                        <td className="user-avatar shadow-inset-small border-small  "><div className="shadow-inset-mid rounded-mid  "><img src={user?.avatar_url}></img></div></td>
-                                        <td className="user-firstname shadow-inset-small border-small  ">{user?.firstname}</td>
-                                        <td className="user-lastname shadow-inset-small border-small  ">{user?.lastname}</td>
-                                        <td className="user-iss-username shadow-inset-small border-small  ">{user?.iss_username}</td>
-                                        <td className="user-edu-uid shadow-inset-small border-small  ">{user?.edu_uid}</td>
-                                        <td className="user-email shadow-inset-small border-small  ">{user?.email}</td>
-                                        <td className="user-github shadow-inset-small border-small  ">{user?.github_profile_link}</td>
+                                        <td className="user-avatar shadow-inset-small  "><div className="shadow-inset-mid rounded-mid  "><img src={user?.avatar_url}></img></div></td>
+                                        <td className="user-firstname shadow-inset-small  ">{user?.firstname}</td>
+                                        <td className="user-lastname shadow-inset-small  ">{user?.lastname}</td>
+                                        <td className="user-iss-username shadow-inset-small  ">{user?.iss_username}</td>
+                                        <td className="user-edu-uid shadow-inset-small  ">{user?.edu_uid}</td>
+                                        <td className="user-email shadow-inset-small  ">{user?.email}</td>
+                                        <td className="user-github shadow-inset-small  ">{user?.github_profile_link}</td>
                                     </tr>
                                 )
                             }

@@ -411,6 +411,10 @@ div {
     box-shadow: var(--shadow-none), var(--shadow-inset-small), var(--shadow-smooth-none);
 }
 
+.shadow-inset-small-important {
+    box-shadow: var(--shadow-none), var(--shadow-inset-small), var(--shadow-smooth-none) !important;
+}
+
 .shadow-inset-mid {
     box-shadow: var(--shadow-none), var(--shadow-inset-mid), var(--shadow-smooth-none);
 }
@@ -918,9 +922,8 @@ textarea {
 }
 
 .lecture-dropdown-button {
-    @extend .surface-primary-100-important;
+    @extend .surface-primary-200-important;
     @extend .shadow-smooth-small;
-    @extend .rounded-small;
     @extend .hover-invert;
     @extend .transition-smooth;
     @extend .text-color-light-important;
@@ -929,10 +932,11 @@ textarea {
 
 .lecture-dropdown-menu {
     @extend .surface-primary-200-important;
-    @extend .shadow-inset-mid-important;
-    @extend .rounded-small;
+    @extend .shadow-inset-small-important;
     @extend .text-color-light-important;
     @extend .text-shadow-small;
+
+    border-radius: 0 !important;
 
     ul {
         margin: 0 !important;
@@ -965,14 +969,14 @@ textarea {
 
 .lecture-dropdown-submenu {
     @extend .surface-primary-200-important;
-    @extend .shadow-inset-mid-important;
-    @extend .rounded-small;
+    @extend .shadow-inset-small-important;
     @extend .text-color-light-important;
     @extend .text-shadow-small;
 
     top: 0px !important;
     left: 100% !important;
     min-width: fit-content !important;
+    border-radius: 0 !important;
 
     ul {
         margin: 0 !important;

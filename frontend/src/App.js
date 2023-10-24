@@ -271,12 +271,12 @@ function App() {
 
   return (
     <div id="app">
-      <header id="app-header" className='surface-primary-200 shadow-mid shadow-smooth-small rounded-circular  transition-smooth'>
+      <header id="app-header" className='surface-primary-200 shadow-smooth-small transition-smooth'>
         {
           navigationRoutes.filter(route => route.role_id == context?.user?.role_id).map((route, route_index) =>
             <div className="dropdown " key={route_index}>
               <button className="dropbtn rounded-small hover-invert transition-smooth">{route.name}</button>
-              <div className="dropdown-content surface-primary-200 shadow-inset-mid rounded-large transition-smooth">
+              <div className="dropdown-content surface-primary-200 shadow-inset-small transition-smooth">
                 {route.children.map((child_route, child_route_index) =>
                   <Link className=' hover-invert transition-smooth'
                     to={child_route.route} onClick={child_route.on_click} key={child_route_index}>

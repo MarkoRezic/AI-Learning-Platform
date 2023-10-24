@@ -48,12 +48,12 @@ function TeamList({ user, ...rest }) {
                             {
                                 teamList.map((team, team_index) =>
                                     <tr className="team-row" key={team_index} onClick={() => { openTeamDetails(team) }}>
-                                        <td className="team-team-name shadow-inset-small border-small  ">{team?.team_name}</td>
-                                        <td className="team-project-name shadow-inset-small border-small  ">{team?.project_name}</td>
-                                        <td className="team-project-github-link shadow-inset-small border-small  ">{team?.project_github_link}</td>
-                                        <td className="team-academic-year shadow-inset-small border-small  ">{team?.academic_year}</td>
-                                        <td className="team-approved shadow-inset-small border-small  ">{team?.approved === 1 ? "ODOBRENO" : "NA ČEKANJU"}</td>
-                                        <td className="team-user-count shadow-inset-small border-small  ">{team?.user_count}</td>
+                                        <td className="team-team-name shadow-inset-small  ">{team?.team_name}</td>
+                                        <td className="team-project-name shadow-inset-small  ">{team?.project_name}</td>
+                                        <td className="team-project-github-link shadow-inset-small  ">{team?.project_github_link}</td>
+                                        <td className="team-academic-year shadow-inset-small  ">{team?.academic_year}</td>
+                                        <td className="team-approved shadow-inset-small  ">{team?.approved === 1 ? "ODOBRENO" : "NA ČEKANJU"}</td>
+                                        <td className="team-user-count shadow-inset-small  ">{team?.user_count}</td>
                                     </tr>
                                 )
                             }
